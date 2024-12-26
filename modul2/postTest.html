@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tambah Data Nilai Mata Kuliah</title>
+    <style>
+        /* Mengatur gaya dasar body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Mengatur tampilan utama form */
+        form {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px 30px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #333;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        /* Mengatur gaya tombol submit */
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Mengatur gaya opsi nilai huruf */
+        .radio-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .radio-group label {
+            font-weight: normal;
+            display: inline-block;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <form action="/submit-nilai" method="POST">
+        <h2>Form Tambah Data Nilai Mata Kuliah</h2>
+
+        <label for="matkul">Nama Mata Kuliah:</label>
+        <input type="text" id="matkul" name="matkul" required>
+
+        <label for="dosen">Nama Dosen:</label>
+        <input type="text" id="dosen" name="dosen" required>
+
+        <label for="sks">SKS:</label>
+        <input type="number" id="sks" name="sks" min="1" max="6" required>
+
+        <label for="mahasiswa">Nama Mahasiswa:</label>
+        <input type="text" id="mahasiswa" name="mahasiswa" required>
+
+        <label for="kehadiran">Jumlah Kehadiran:</label>
+        <input type="number" id="kehadiran" name="kehadiran" min="0" max="100" required>
+
+        <label for="tugas">Nilai Tugas:</label>
+        <input type="number" id="tugas" name="tugas" min="0" max="100" required>
+
+        <label for="quiz">Nilai Quiz:</label>
+        <input type="number" id="quiz" name="quiz" min="0" max="100" required>
+
+        <label for="uts">Nilai UTS:</label>
+        <input type="number" id="uts" name="uts" min="0" max="100" required>
+
+        <label for="uas">Nilai UAS:</label>
+        <input type="number" id="uas" name="uas" min="0" max="100" required>
+
+        <label for="nilai_akhir">Nilai Akhir:</label>
+        <input type="number" id="nilai_akhir" name="nilai_akhir" min="0" max="100" required>
+
+        <label>Nilai Huruf:</label>
+        <div class="radio-group">
+            <input type="radio" id="A" name="nilai_huruf" value="A" required>
+            <label for="A">A</label>
+
+            <input type="radio" id="B" name="nilai_huruf" value="B">
+            <label for="B">B</label>
+
+            <input type="radio" id="C" name="nilai_huruf" value="C">
+            <label for="C">C</label>
+
+            <input type="radio" id="D" name="nilai_huruf" value="D">
+            <label for="D">D</label>
+
+            <input type="radio" id="E" name="nilai_huruf" value="E">
+            <label for="E">E</label>
+        </div>
+
+        <input type="submit" value="Tambah Data Nilai">
+    </form>
+</body>
+</html>
