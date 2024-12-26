@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jayden's House Hotel</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        color: #333;
+      }
+
+      /* Header */
+      .header {
+        display: flex;
+        align-items: center;
+        background-color: #333;
+        color: white;
+        padding: 20px;
+      }
+
+      .header img {
+        width: 100px;
+        height: auto;
+        margin-right: 10px;
+      }
+
+      .header h2 {
+        font-size: 1.8em;
+      }
+
+      /* Navigation */
+      .navigation nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        padding: 10px 20px;
+        background-color: #333;
+      }
+
+      .navigation nav ul li {
+        position: relative;
+      }
+
+      .navigation nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      /* Dropdown menu */
+      .dropdown,
+      .sub-nav-dropdown,
+      .sub-nav-kolam {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #555;
+        padding: 10px;
+        min-width: 200px;
+        z-index: 2;
+      }
+
+      .navigation nav ul li:hover > .dropdown,
+      .dropdown li:hover > .sub-nav-dropdown,
+      .pilihan-kolam:hover > .sub-nav-kolam {
+        display: block;
+      }
+
+      /* Main layout */
+      .main {
+        display: flex;
+      }
+
+      /* Video Sidebar */
+      .leftbar {
+        width: 300px;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+
+      .video-leftbar iframe {
+        margin-bottom: 15px;
+        width: 100%;
+        height: 150px;
+      }
+
+      /* Gallery Content */
+      .konten {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        padding: 20px;
+        background-color: #f4f4f4;
+        z-index: 1;
+      }
+
+      .image-cover {
+        width: 100%;
+        padding-top: 50%; 
+        position: relative;
+      }
+
+      .image-cover img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #333;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <img src="image/logoHotel.png" alt="Jayden" />
+      <h3>Jayden's House Hotel</h3>
+    </header>
+
+    <!-- Navigation -->
+    <header class="navigation">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Kamar</a></li>
+          <li>
+            <a href="#" class="fasilitas">Fasilitas</a>
+            <div class="dropdown">
+              <ul>
+                <li><a href="#">Petualangan Alam</a></li>
+                <li class="kolam">
+                  <a href="#">Kolam Renang</a>
+                  <div class="sub-nav-dropdown">
+                    <ul>
+                      <li><a href="#">Sumber air panas</a></li>
+                      <li class="pilihan-kolam">
+                        <a href="#">Kolam Anak & Dewasa</a>
+                        <div class="sub-nav-kolam">
+                          <ul>
+                            <li><a href="#">Reguler</a></li>
+                            <li><a href="#">Premium</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li><a href="#">Pusat Kebugaran</a></li>
+                <li><a href="#">Ruang Rapat</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="#">Pesan Sekarang</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content Layout -->
+    <div class="main">
+      <!-- Video Sidebar -->
+      <aside class="leftbar">
+        <div class="video-leftbar">
+          <iframe
+            src="https://www.youtube.com/embed/fDBkNZhT-Eo?si=DHXAo1n099X7kWWE"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+            picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/ZLYduybRWwQ?si=Iadqzw87Q3qYUsqT"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+            picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/LOHkElDRsDM?si=dsD9VTCvXo3H5H_J"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+            picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </aside>
+
+      <!-- Gallery Content -->
+      <section class="konten">
+        <div class="image-cover"><img src="image/lobi.jpg" alt="Lobi" /></div>
+        <div class="image-cover"><img src="image/restoran.jpg" alt="Restoran" /></div>
+        <div class="image-cover"><img src="image/standarroom.jpg" alt="Standard Room" /></div>
+        <div class="image-cover"><img src="image/deluxeroom.jpg" alt="Deluxe Room" /></div>
+        <div class="image-cover"><img src="image/familyroom.jpg" alt="Family Room" /></div>
+        <div class="image-cover"><img src="image/kolamrenang.jpg" alt="Kolam Renang" /></div>
+        <div class="image-cover"><img src="image/billiard.jpg" alt="Billiard" /></div>
+        <div class="image-cover"><img src="image/gym.jpg" alt="Gym" /></div>
+        <div class="image-cover"><img src="image/taman.jpg" alt="Taman" /></div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Develop by Zahra &copy; 2024</p>
+    </footer>
+  </body>
+</html>

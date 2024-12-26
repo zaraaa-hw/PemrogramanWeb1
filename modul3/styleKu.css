@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header, .footer {
+    background-color: #985d82;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar, .rightbar {
+    width: 200px;
+    background-color: #e4d0de;
+    padding: 10px;
+}
+
+.content {
+    flex: 1;
+    padding: 10px;
+    background-color: #f4f4f4;
+}

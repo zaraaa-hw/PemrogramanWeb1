@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Kamar</title>
+    <style>
+        :root {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f7f7f7;
+        }
+        .container {
+            background-color: rgb(226, 232, 240);
+            padding: 20px;
+            width: 50%;
+            box-shadow: 0 0 10px 1px rgb(71, 72, 72);
+            border-radius: 5px;
+        }
+        h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 8px 0;
+        }
+        label {
+            display: inline-block;
+            width: 120px;
+        }
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 6px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border: 1px solid rgb(71, 72, 72);
+            background-color: rgb(226, 232, 240);
+            box-shadow: 0 0 5px 1px rgb(71, 72, 72);
+            transition: 500ms;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .buttons button {
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .buttons .save {
+            background-color: blue;
+        }
+        .buttons .cancel {
+            background-color: orange;
+        }
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .image-container img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 10px;
+            display: none;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            <h2>Formulir Data Kamar</h2>
+            <table>
+                <tr>
+                    <td><label for="id_kamar">Id Kamar :</label></td>
+                    <td><input type="number" id="id_kamar" name="id_kamar" required></td>
+                </tr>
+                <tr>
+                    <td><label for="jenis_kamar">Jenis Kamar :</label></td>
+                    <td>
+                        <select id="jenis_kamar" name="jenis_kamar" required onchange="infoRuangan()">
+                            <option value="">--Pilih--</option>
+                            <option value="standar">Standar</option>
+                            <option value="deluxe">Deluxe</option>
+                            <option value="family">Family</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="harga_kamar">Harga :</label></td>
+                    <td><input type="number" id="harga_kamar" name="harga_kamar" required readonly></td>
+                </tr>
+                <tr>
+                    <td><label for="fasilitas_kamar">Fasilitas :</label></td>
+                    <td>
+                        <select id="fasilitas_kamar" name="fasilitas" required>
+                            <option value="-">--Pilih--</option>
+                            <option value="TV">TV</option>
+                            <option value="AC">AC</option>
+                            <option value="WIFI">WIFI</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <div class="image-container">
+                <img id="standar_image" src="image/kamar1.jpg" alt="Standar Room">
+                <img id="deluxe_image" src="image/kamar2.jpg" alt="Deluxe Room">
+                <img id="family_image" src="image/kamar3.jpg" alt="Family Room">
+            </div>
+            <div class="buttons">
+                <button type="submit" class="save">Simpan</button>
+                <button type="reset" class="cancel" onclick="resetForm()">Batal</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function  infoRuangan() {
+            var jenis_kamar = document.getElementById('jenis_kamar').value;
+            var harga = document.getElementById('harga_kamar');
+
+            document.getElementById('standar_image').style.display = 'none';
+            document.getElementById('deluxe_image').style.display = 'none';
+            document.getElementById('family_image').style.display = 'none';
+
+            // Update price and display image based on selected room type
+            if (jenis_kamar === 'standar') {
+                harga.value = 500000;
+                document.getElementById('standar_image').style.display = 'block';
+            } else if (jenis_kamar === 'deluxe') {
+                harga.value = 700000;
+                document.getElementById('deluxe_image').style.display = 'block';
+            } else if (jenis_kamar === 'family') {
+                harga.value = 1000000;
+                document.getElementById('family_image').style.display = 'block';
+            } else {
+                harga.value = '';
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('harga_kamar').value = '';
+            document.getElementById('standar_image').style.display = 'none';
+            document.getElementById('deluxe_image').style.display = 'none';
+            document.getElementById('family_image').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
