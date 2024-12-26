@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="./style3.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <form class="form-content" onsubmit="handleSubmit(event)">
+        <table>
+          <thead>
+            <tr>
+              <th colspan="4">
+                <h2 class="form-title">Form Pemesanan</h2>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <label for="idPemesanan">Id Pemesanan:</label>
+              </td>
+              <td colspan="2">
+                <input type="number" id="idPemesanan" name="idPemesanan" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="namaPemesan">Nama Pemesan:</label>
+              </td>
+              <td>
+                <input type="text" id="namaPemesan" name="namaPemesan" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="nomorIdentitas">Nomor Identitas:</label>
+              </td>
+              <td>
+                <input
+                  type="number"
+                  id="nomorIdentitas"
+                  name="nomorIdentitas"
+                  oninput="handleNomorIdentitas(event)"
+                />
+              </td>
+            </tr>
+            <tr id="nomorIdentitasMessage">
+              <td
+              colspan="2"
+                style="
+                  color: red;
+                  text-align: center;
+                  padding-left: 26px;
+                  font-size: 12px;
+                "
+              >
+                Isian salah, harus 16 digit
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="tipeKamar">Tipe Kamar:</label>
+              </td>
+              <td>
+                <select
+                  class="tipeKamar"
+                  name="tipeKamar"
+                  id="tipeKamar"
+                  onchange="handleTipeKamar(event)"
+                >
+                  <option value="">--Pilih--</option>
+                  <option value="standar">STANDAR</option>
+                  <option value="deluxe">DELUXE</option>
+                  <option value="family">FAMILY</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Jenis Kelamin</td>
+              <td>
+                <select name="jk" id="jk">
+                  <option value="">--Pilih--</option>
+                  <option value="Laki-Laki">Laki-Laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="harga">Harga:</label>
+              </td>
+              <td>
+                <input type="number" id="harga" name="harga" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="tanggalPesan">Tanggal Pesan:</label>
+              </td>
+              <td>
+                <input type="date" id="tanggalPesan" name="tanggalPesan" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="durasiMenginap">Durasi Menginap:</label>
+              </td>
+              <td>
+                <div class="menginap" >
+                  <input
+                    type="number"
+                    min="1"
+                    id="durasiMenginap"
+                    name="durasiMenginap"
+                    oninput="handleDurasiMenginap(event)"
+                  />
+                  <span>Hari</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="breakfast">Termasuk Breakfast:</label>
+              </td>
+              <td>
+                <div class="breakfast">
+                  <input type="checkbox" id="breakfast" name="breakfast" onchange="handleBreakfast(event)" />
+                  <span>Ya</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="totalBayar">Total Bayar</label>
+              </td>
+              <td>
+                <input type="text" id="totalBayar" name="totalBayar" readonly />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn-container btn-visible">
+          <button type="submit" id="btn-simpan">Simpan</button>
+          <button type="reset">Batal</button>
+        </div>
+        <p class="loading loading-hidden">Loading please wait..</p>
+      </form>
+      <div class="resumePemesanan"></div>
+    </div>
+
+    <script src="./tugas3.js"></script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostTest 2</title>
+</head>
+<body>
+    <form name="form1">
+        <table border="1">
+            <tr>
+                <th colspan="2">Data Penjualan Barang</th>
+            </tr>
+            <tr>
+                <td>Kode</td>
+                <td>
+                    <select name="kode" id="kode" onchange="dataBarang()">
+                        <option disabled selected>--Pilih Salah Satu--</option>
+                        <option value="B001">B001</option>
+                        <option value="B002">B002</option>
+                        <option value="B003">B003</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Jumlah Beli</td>
+                <td><input type="number" name="beli" onchange="jumlahBeli()"></td>
+            </tr>
+            <tr>
+                <td>Nama Barang</td>
+                <td><input type="text" readonly name="barang"></td>
+            </tr>
+            <tr>
+                <td>Harga</td>
+                <td><input type="text" readonly name="harga"></td>
+            </tr>
+            <tr>
+                <td>Jumlah Bayar</td>
+                <td><input type="text" readonly name="bayar"></td>
+            </tr>
+            <tr>
+                <td>Potongan (%)</td>
+                <td><input type="text" readonly name="potongan"></td>
+            </tr>
+            <tr>
+                <td>Potongan Harga</td>
+                <td><input type="text" readonly name="potongan_harga"></td>
+            </tr>
+            <tr>
+                <td>Total Bayar</td>
+                <td><input type="text" readonly name="total"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="button" value="Tampilkan" onclick="result()"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function dataBarang() {
+            const kode = document.form1.kode.value;
+            let barang = "";
+            let harga = 0;
+
+            switch (kode) {
+                case "B001":
+                    barang = "Buku";
+                    harga = 5000;
+                    break;
+                case "B002":
+                    barang = "Penggaris";
+                    harga = 1500;
+                    break;
+                case "B003":
+                    barang = "Pulpen";
+                    harga = 2000;
+                    break;
+            }
+
+            document.form1.barang.value = barang;
+            document.form1.harga.value = harga;
+
+            // Reset fields when kode changes
+            document.form1.beli.value = "";
+            document.form1.bayar.value = "";
+            document.form1.potongan.value = "";
+            document.form1.potongan_harga.value = "";
+            document.form1.total.value = "";
+        }
+
+        function jumlahBeli() {
+            const jumlahBeli = parseInt(document.form1.beli.value) || 0;
+            const harga = parseInt(document.form1.harga.value) || 0;
+
+            if (!jumlahBeli || !harga) return;
+
+            const jumlahBayar = jumlahBeli * harga;
+            document.form1.bayar.value = jumlahBayar;
+
+            let potonganPersen = 0;
+            if (jumlahBeli <= 10) {
+                potonganPersen = 5; // 5%
+            } else if (jumlahBeli <= 20) {
+                potonganPersen = 10; // 10%
+            } else if (jumlahBeli > 20) {
+                potonganPersen = 15; // 15%
+            }
+
+            const potonganHarga = (potonganPersen / 100) * jumlahBayar;
+            const totalBayar = jumlahBayar - potonganHarga;
+
+            document.form1.potongan.value = potonganPersen;
+            document.form1.potongan_harga.value = potonganHarga;
+            document.form1.total.value = totalBayar;
+        }
+
+        function result() {
+            const kode = document.form1.kode.value;
+            const barang = document.form1.barang.value;
+            const harga = document.form1.harga.value;
+            const beli = document.form1.beli.value;
+            const bayar = document.form1.bayar.value;
+            const potongan = document.form1.potongan_harga.value;
+            const total = document.form1.total.value;
+
+            document.write("<h2>Nota Penjualan</h2>");
+            document.write(`<p>Kode Barang: ${kode}</p>`);
+            document.write(`<p>Nama Barang: ${barang}</p>`);
+            document.write(`<p>Harga Barang: ${harga}</p>`);
+            document.write(`<p>Jumlah Beli: ${beli}</p>`);
+            document.write("<hr>");
+            document.write(`<p>Jumlah Bayar: ${bayar}</p>`);
+            document.write(`<p>Potongan Harga: ${potongan}</p>`);
+            document.write(`<p>Total Bayar: ${total}</p>`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validasi Username dan Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Masukkan Username" />
+            <input type="password" id="password" placeholder="Masukkan Password" />
+            <button type="button" onclick="validateLogin()">Login</button>
+        </form>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        // Data username dan password yang benar
+        const username = "admin";
+        const password = "12345";
+
+        function validateLogin() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const message = document.getElementById("message");
+
+            // Reset pesan
+            message.innerHTML = "";
+            message.classList.remove("success", "error");
+
+            // Validasi input kosong
+            if (username === "" || password === "") {
+                message.textContent = "Username dan Password tidak boleh kosong!";
+                message.classList.add("error");
+                return;
+            }
+
+            // Validasi username dan password
+            if (username === username && password === password) {
+                message.textContent = "Login berhasil!";
+                message.classList.add("success");
+            } else {
+                message.textContent = "Login gagal! Username atau Password salah.";
+                message.classList.add("error");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+:root {
+  --primary: #cbd5e1;
+  --secondary: #94a3b8;
+  --third: #133E87;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition: none;
+  }
+}
+
+body,
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  font-family: arial;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 100px 0px;
+}
+
+.table-container {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Tabel Data Kamar */
+.table-container {
+  width: 100%;
+}
+
+.data-kamar-container table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.data-kamar-container table thead tr th {
+  padding: 10px;
+}
+
+.item-image {
+  height: 20%;
+}
+
+.item-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: fill;
+}
+
+/* Tabel Data Kamar end */
+
+/* tabel fasilitas */
+.fasilitas-container {
+  width: 100%;
+}
+
+.fasilitas-container table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.fasilitas-container table thead tr th {
+  padding: 10px;
+}
+
+.fasilitas-container table tbody tr td {
+  padding: 6px;
+}
+/* tabel fasilitas end */
+
+/* form add data */
+.form-container {
+  width: 100%;
+  display: flex;
+}
+
+.form-container .form-data {
+  width: 40%;
+  margin: auto;
+  box-shadow: 0px 0px 4px 1px var(--secondary);
+  border-radius: 8px;
+  padding: 30px 12px;
+}
+
+.form-container .form-data .form-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.form-container .form-data .form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-content label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-content label span {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-content label input {
+  padding: 6px;
+  border-radius: 8px;
+  border: 2px solid var(--third);
+  opacity: 0.2;
+  outline: none;
+}
+
+.form-content label input:focus {
+    border: 2px solid var(var(--third));
+    opacity: 1;
+}
+
+.form-content label select {
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid black;
+    opacity: 0.4;
+    outline: none;
+}
+
+
+/* form content one */
+.form-container .form-data .form-content .form-content-one {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+}
+
+.form-container
+  .form-data-kamar
+  .form-content
+  .form-content-one
+  label:nth-child(1) {
+  grid-column: 1/3;
+}
+
+.form-container
+  .form-data-kamar
+  .form-content
+  .form-content-one
+  label:nth-last-child(1) {
+  grid-column: 3/3;
+}
+
+/* form content one end */
+
+/* form content two */
+.form-container .form-data .form-content .form-content-two {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+  }
+  /* form content two end */
+
+  /* form button */
+  .form-container .form-data .form-button {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .form-container .form-data .form-button button {
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: none;
+  }
+
+  .form-container .form-data .form-button button:nth-child(1) {
+    background-color: azure;
+  }
+
+  .form-container .form-data .form-button button:nth-last-child(1) {
+    background-color: var(--third);
+    color: white;
+  }
+  /* form button end */
+  

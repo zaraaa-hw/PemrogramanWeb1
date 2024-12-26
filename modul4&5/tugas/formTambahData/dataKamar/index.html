@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Form Tambah Data Kamar</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" method="get">
+        <h2>Form Tambah Data Kamar</h2>
+        <table border="0" style="width: 100%">
+          <tr>
+            <td><label for="idKamar">Id Kamar:</label></td>
+            <td><input type="number" name="idKamar" required /></td>
+          </tr>
+          <tr>
+            <td><label for="gambarRuangan">Gambar Ruangan:</label></td>
+            <td><input type="file" name="gambarRuangan" required /></td>
+          </tr>
+          <tr>
+            <td><label for="jenisKamar">Jenis Kamar:</label></td>
+            <td>
+              <select name="jenisKamar">
+                <option value="default">--Pilih--</option>
+                <option value="standar">STANDAR</option>
+                <option value="delux">DELUX</option>
+                <option value="family">FAMILY</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="harga">Harga:</label></td>
+            <td><input type="number" name="harga" /></td>
+          </tr>
+          <tr>
+            <td><label for="fasilitas">Fasilitas:</label></td>
+            <td>
+              <select name="fasilitas">
+                <option value="default" selected>--Pilih--</option>
+                <option value="ac">AC</option>
+                <option value="tv">TV</option>
+                <option value="kulkas">Kulkas</option>
+                <option value="bathub">Bathub</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <div class="btns">
+          <button name="save" value="simpan" style="background-color: blue">
+            Simpan
+          </button>
+          <button
+            type="reset"
+            name="cancel"
+            value="batal"
+            style="background-color: orange"
+          >
+            Batal
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

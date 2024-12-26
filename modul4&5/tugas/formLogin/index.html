@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: auto;
+        }
+
+        .wrapper {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .btn-logout {
+            width: 100px;
+            border-radius: 10px;
+            padding: 2px;
+            color: white;
+            background-color: rgb(230, 156, 214);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <h1>Hello!!</h1>
+            <h4>Selamat datang admin</h4>
+            <button onclick="handleLogout()" class="btn-logout">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        const handleLogout = () => {
+            window.location.href = "/tugas/formLogin/login.html"
+        }
+    </script>
+</body>
+</html>

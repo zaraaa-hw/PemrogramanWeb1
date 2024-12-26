@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .container {
+        max-width: 1120px;
+        margin: auto;
+      }
+
+      .container .wrapper {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      form .form-title {
+        text-align: center;
+      }
+
+      form .inputUsername {
+        display: flex;
+        flex-direction: column;
+      }
+
+      form span {
+        font-size: 1rem;
+      }
+
+      form input {
+        border-radius: 10px;
+        padding: 4px;
+        border-color: rgba(0, 0, 0, 0.5);
+      }
+
+      form .inputPassword {
+        display: flex;
+        flex-direction: column;
+      }
+
+
+      form .btn-login {
+        width: 100%;
+        color: white;
+        background-color: rgb(213, 40, 144);
+        border-radius: 10px;
+        padding: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <form onsubmit="handleForm(event)">
+          <h2 class="form-title">Login Form</h2>
+          <label for="" class="inputUsername">
+            <span>Username</span>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Enter username"
+            />
+          </label>
+          <label for="" class="inputPassword">
+            <span>Password</span>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter password"
+            />
+          </label>
+
+          <button type="submit" class="btn-login">Login</button>
+        </form>
+      </div>
+    </div>
+    <script src="./js/tugas1.js"></script>
+  </body>
+</html>

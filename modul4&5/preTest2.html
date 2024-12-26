@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validasi Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .success {
+            color: rgb(172, 96, 153);
+        }
+        .error {
+            color: rgb(231, 215, 148);
+        }
+    </style>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <div>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Masukan username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Masukkan password">
+        </div>
+        <button onclick="validasiLogin()">Login</button>
+    </div>
+    <div id="message"></div>
+
+    <script>
+        // Username dan password yang valid
+        const validUsername = "user";
+        const validPassword = "1234";
+
+        // Fungsi untuk validasi login
+        function validasiLogin() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const message = document.getElementById("message");
+
+            if (username === "" || password === "") {
+                message.textContent = "Username dan password tidak boleh kosong.";
+                message.className = "error";
+                return;
+            }
+
+            if (username === validUsername && password === validPassword) {
+                message.textContent = "Login berhasil!";
+                message.className = "success";
+            } else {
+                message.textContent = "Login gagal. Username atau password salah.";
+                message.className = "error";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="table-container">
+        <!-- data kamar start -->
+        <div class="data-kamar-container">
+          <table border="1">
+            <thead>
+              <tr>
+                <th>id kamar</th>
+                <th>Gambar Ruangan</th>
+                <th>Jenis Kamar</th>
+                <th>Harga</th>
+                <th colspan="4">Fasilitas</th>
+              </tr>
+            </thead>
+            <tbody id="body-data-kamar"></tbody>
+          </table>
+          <div></div>
+        </div>
+        <!-- data kamar end -->
+
+        <!-- fasiitas start -->
+        <div class="fasilitas-container">
+          <table border="1">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nama</th>
+                <th>Fasilitas</th>
+                <th>Harga Weekend</th>
+                <th>Harga Weekday</th>
+                <th>Kuota</th>
+                <th>Jam Buka</th>
+                <th>Jam Tutup</th>
+              </tr>
+            </thead>
+            <tbody id="body-fasilitas"></tbody>
+          </table>
+        </div>
+        <!-- fasilitas end -->
+      </div>
+
+      <div class="form-container">
+        <!-- form add kamar -->
+        <form class="form-data" onsubmit="handleSubmit(event)">
+          <h2 class="form-title">Tambah Data Kamar</h2>
+          <div class="form-content">
+            <div class="form-content-one">
+              <label for="id-data-kamar">
+                <span>Id</span>
+                <input
+                  type="number"
+                  name="id-data-kamar"
+                  id="id-data-kamar"
+                  placeholder="Enter Id"
+                />
+              </label>
+              <label for="gambar-ruangan">
+                <span>Gambar ruangan</span>
+                <select name="gambar-ruangan" id="gambar-ruangan">
+                  <option value="">--Ruangan---</option>
+                  <option value="premium">Ruang Premium</option>
+                  <option value="greenPremium">Ruang Green Premium</option>
+                  <option value="semiPremium">Ruang Semi Premium</option>
+                </select>
+              </label>
+            </div>
+            <div class="form-content-two">
+              <label for="jenis-kamar">
+                <span>Jenis Kamar</span>
+                <select name="jenis-kamar" id="jenis-kamar">
+                  <option value="">--jenis--</option>
+                  <option value="Premium">Premium</option>
+                  <option value="Green Premium">Green Premium</option>
+                  <option value="Semi Premium">Semi Premium</option>
+                </select>
+              </label>
+              <label for="fasilitas">
+                <span>Fasilitas</span>
+                <select name="fasilitas" id="fasilitas"></select>
+              </label>
+            </div>
+            <div class="form-content-three">
+              <label for="harga-kamar">
+                <span>Harga</span>
+                <input
+                  type="number"
+                  name="harga-kamar"
+                  id="harga-kamar"
+                  placeholder="Enter Harga"
+                />
+              </label>
+            </div>
+          </div>
+          <div class="form-button">
+            <button type="reset">Cancel</button>
+            <button type="submit">Save</button>
+          </div>
+        </form>
+
+        <!-- Form add fasilitas -->
+        <form class="form-data" onsubmit="handleSubmitFasilitas(event)">
+          <h2 class="form-title">Tambah Fasilitas</h2>
+          <div class="form-content">
+            <div class="form-content-one">
+              <label for="id-fasilitas">
+                <span>Id</span>
+                <input
+                  type="number"
+                  name="id-fasilitas"
+                  id="id-fasilitas"
+                  placeholder="Enter Id"
+                />
+              </label>
+
+              <label for="kuota-fasilitas">
+                <span>Kuota</span>
+                <input
+                  type="number"
+                  name="kuota-fasilitas"
+                  id="kuota-fasilitas"
+                  placeholder="Enter Harga"
+                />
+              </label>
+            </div>
+            <div>
+              <label for="name-fasilitas">
+                <span>Nama Fasilitas</span>
+                <input
+                  type="text"
+                  placeholder="Enter Name Fasilitas"
+                  name="name-fasilitas"
+                  id="name-fasilitas"
+                />
+              </label>
+            </div>
+            <div class="form-content-two">
+              <label for="harga-weekend-fasilitas">
+                <span>Harga weekend</span>
+                <input
+                  type="number"
+                  placeholder="Harga weekend"
+                  name="harga-weekend-fasilitas"
+                  id="harga-weekend-fasilitas"
+                />
+              </label>
+              <label for="harga-weekday-fasilitas">
+                <span>Harga weekday</span>
+                <input
+                  type="number"
+                  placeholder="Harga weekday"
+                  name="harga-weekday-fasilitas"
+                  id="harga-weekday-fasilitas"
+                />
+              </label>
+              <label for="jam-buka-fasilitas">
+                <span>Jam Buka</span>
+                <input
+                  type="time"
+                  placeholder="Jam Buka"
+                  name="jam-buka-fasilitas"
+                  id="jam-buka-fasilitas"
+                />
+              </label>
+              <label for="jam-tutup-fasilitas">
+                <span>Jam Tutup</span>
+                <input
+                  type="time"
+                  placeholder="Jam Tutup"
+                  name="jam-tutup-fasilitas"
+                  id="jam-tutup-fasilitas"
+                />
+              </label>
+            </div>
+            <div class="form-content-three">
+              <label for="isi-fasilitas">
+                <span>Fasilitas</span>
+                <input
+                  type="text"
+                  placeholder="Enter Fasilitas"
+                  name="isi-fasilitas"
+                  id="isi-fasilitas"
+                />
+              </label>  
+            </div>
+          </div>
+          <div class="form-button">
+            <button type="reset">Cancel</button>
+            <button type="submit">Save</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

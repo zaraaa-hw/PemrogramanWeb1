@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Form Tambah Data Fasilitas</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" method="get">
+        <h2>Form Tambah Data Fasilitas</h2>
+        <table border="0" style="width: 100%">
+          <tr>
+            <td><label for="idFasilitas">Id:</label></td>
+            <td><input type="number" name="idFasilitas" required /></td>
+          </tr>
+          <tr>
+            <td><label for="namaFasilitas">Nama:</label></td>
+            <td><input type="text" name="namaFasilitas" /></td>
+          </tr>
+          <tr>
+            <td><label for="fasilitas">Fasilitas:</label></td>
+            <td><input type="text" name="fasilitas" /></td>
+          </tr>
+          <tr>
+            <td><label for="hargaWeekend">Harga Weekend:</label></td>
+            <td><input type="number" name="hargaWeekend" /></td>
+          </tr>
+          <tr>
+            <td><label for="hargaWeekday">Harga Weekday:</label></td>
+            <td><input type="number" name="hargaWeekday" /></td>
+          </tr>
+          <tr>
+            <td><label for="kuota">Kuota:</label></td>
+            <td><input type="number" name="kuota" /></td>
+          </tr>
+          <tr>
+            <td><label for="jamBuka">Jam Buka:</label></td>
+            <td><input type="time" name="jamBuka" /></td>
+          </tr>
+          <tr>
+            <td><label for="jamTutup">Jam Tutup:</label></td>
+            <td><input type="time" name="jamTutup" /></td>
+          </tr>
+        </table>
+        <div class="btns">
+          <button name="save" value="simpan" style="background-color: blue">
+            Simpan
+          </button>
+          <button
+            type="reset"
+            name="cancel"
+            value="batal"
+            style="background-color: orange"
+          >
+            Batal
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
