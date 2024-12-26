@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Hotel</title>
+    <style>
+      .checkmark {
+        font-size: 20px;
+      }
+      table thead {
+        background-color: rgb(198, 131, 23);
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Data kamar -->
+    <div class="data-kamar">
+      <h2>Data Kamar</h2>
+      <table border="1" style="text-align: center;">
+        <thead>
+          <tr>
+            <th>Id Kamar</th>
+            <th>Gambar Kamar</th>
+            <th>Tipe kamar</th>
+            <th>Harga</th>
+            <th>Fasilitas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>401</td>
+            <td><img src="gambar/standarroom.jpg" alt="standar-room" width="200px"></td>
+            <td>Standar Room</td>
+            <td>Rp.650.000</td>
+            <td>Tempat tidur, meja, kursi, lemari pakaian, kamar mandi dengan shower, 
+              televisi, dan akses Wi-Fi</td>
+          </tr>
+          <tr>
+            <td>501</td>
+            <td><img src="gambar/deluxeroom.jpg" alt="deluxe-room" width="200px"></td>
+            <td>Deluxe Room</td>
+            <td>Rp.900.000</td>
+            <td>Tempat tidur, meja, kursi, lemari pakaian,sof, kamar mandi dengan bathtub, 
+              minibar</td>
+          </tr>
+          <tr>
+            <td>601</td>
+            <td><img src="gambar/familyroom.jpg" alt="family-room" width="200px"></td>
+            <td>Family Room</td>
+            <td>Rp.2000.000</td>
+            <td>Kamar tidur yang luas, kasur yang banyak, ruang tamu terpisah, 
+              ruang makan, dapur kecil, kamar mandi dengan bathtub dan shower 
+              terpisah, ruang kerja</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Fasilitas -->
+    <div class="Fasilitas">
+      <h2>Fasilitas</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nama</th>
+            <th>Fasilitas</th>
+            <th>Harga Weekend</th>
+            <th>Harga Weekday</th>
+            <th>Kuota</th>
+            <th>Jam Buka</th>
+            <th>Jam Tutup</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>301</td>
+            <td>GYM</td>
+            <td>Alat-alat Workout, Sauna, Kamar mandi, Kamar ganti, dan Loker 
+              maksimal 3 jam</td>
+            <td>Rp.75.000</td>
+            <td>Rp.50.000</td>
+            <td>1 Orang</td>
+            <td>02.00</td>
+            <td>21.00</td>
+          </tr>
+          <tr>
+            <td>201</td>
+            <td>SPA</td>
+            <td>Berendam dan pijat</td>
+            <td>Rp.150.000</td>
+            <td>Rp.100.000</td>
+            <td>1 Orang</td>
+            <td>09.00</td>
+            <td>20.00</td>
+          </tr>
+          <tr>
+            <td>101</td>
+            <td>Klub Anak</td>
+            <td>Playground</td>
+            <td>Rp.50.000</td>
+            <td>Rp.40.000</td>
+            <td>1 Orang</td>
+            <td>08.00</td>
+            <td>16.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Data pemesanan -->
+    <div class="data-pemesanan">
+      <h2>Data Pemesanan</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th rowspan="2">Id</th>
+            <th rowspan="2">Tanggal Pesan</th>
+            <th rowspan="2">Nama Tamu</th>
+            <th rowspan="2">Type Kamar</th>
+            <th rowspan="2">Check In</th>
+            <th rowspan="2">Check Out</th>
+            <th colspan="2">Fasilitas Tambahan</th>
+          </tr>
+          <tr>
+            <th style="background-color: green;">Ya</th>
+            <th style="background-color: red;">Tidak</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>R401</td>
+            <td>24 Mei 2024</td>
+            <td>Zahra Herlian Naufal</td>
+            <td>Standar Room</td>
+            <td>27 Mei 2024</td>
+            <td>28 Mei 2024</td>
+            <td></td>
+            <td><span class="checkmark" style="color: red;">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td>R501</td>
+            <td>26 Mei 2024</td>
+            <td>Fiandra Nur Herliandy</td>
+            <td>Deluxe Room</td>
+            <td>28 Mei 2024</td>
+            <td>29 Juni 2024</td>
+            <td><span class="checkmark" style="color: green;">&#10003;</span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>R601</td>
+            <td>27 Mei 2024</td>
+            <td>Elgio Rafadhan Herliana</td>
+            <td>Suite Room</td>
+            <td>29 Mei 2024</td>
+            <td>30 Juny 2024</td>
+            <td><span class="checkmark" style="color: green;">&#10003;</span></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
