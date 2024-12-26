@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jayden's House Hotel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        color: #333;
+      }
+
+      /* Header */
+      .header {
+        display: flex;
+        align-items: center;
+        background-color: #333;
+        color: white;
+        padding: 25 px;
+      }
+
+      .header img {
+        width: 100px;
+        height: auto;
+        margin-right: 10px;
+      }
+
+      .header h3 {
+        font-size: 1.8em;
+      }
+
+      /* Navigation */
+      .navbar-nav {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-item a {
+        color: white;
+        font-weight: bold;
+      }
+
+      /* Dropdown menu */
+      .dropdown-menu {
+        background-color: #555;
+      }
+
+      .dropdown-menu a {
+        color: white;
+      }
+
+      /* Main Layout */
+      .main {
+        display: flex;
+      }
+
+      /* Left Sidebar */
+      .leftbar {
+        width: 300px;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+
+      .video-leftbar iframe {
+        margin-bottom: 15px;
+        width: 100%;
+        height: 150px;
+      }
+
+      /* Gallery Content */
+      .konten {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+
+      .image-cover {
+        width: 100%;
+        padding-top: 50%;
+        position: relative;
+      }
+
+      .image-cover img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 5px;
+        background-color: #333;
+        color: white;
+      }
+
+      /* Make sure dropdown and submenu are visible */
+      .dropdown:hover > .dropdown-menu,
+      .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-submenu {
+        position: relative;
+      }
+
+      .dropdown-submenu .dropdown-menu {
+        left: 100%;
+        top: 0;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <img src="image/logoHotel.png" alt="Jayden" />
+      <h3>Jayden's House Hotel</h3>
+    </header>
+
+    <!-- Navigation -->
+    <header class="bg-dark text-light py-3">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Kamar</a></li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Fasilitas
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">Petualangan Alam</a>
+                  </li>
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#"
+                      >Kolam Renang</a
+                    >
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#">Sumber Air Panas</a>
+                      </li>
+                      <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#"
+                          >Kolam Anak & Dewasa</a
+                        >
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Reguler</a></li>
+                          <li><a class="dropdown-item" href="#">Premium</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Pusat Kebugaran</a></li>
+                  <li><a class="dropdown-item" href="#">Ruang Rapat</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pesan Sekarang</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content Layout -->
+    <div class="main">
+      <!-- Left Sidebar (Video) -->
+      <aside class="leftbar">
+        <div class="video-leftbar">
+          <iframe
+            width="100%"
+            height="130"
+            src="https://www.youtube.com/embed/fDBkNZhT-Eo"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            width="100%"
+            height="130"
+            src="https://www.youtube.com/embed/ZLYduybRWwQ"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            width="100%"
+            height="130"
+            src="https://www.youtube.com/embed/LOHkElDRsDM"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </aside>
+
+      <!-- Gallery Content -->
+      <section class="konten">
+        <div class="image-cover"><img src="image/lobi.jpg" alt="Lobi" /></div>
+        <div class="image-cover">
+          <img src="image/restoran.jpg" alt="Restoran" />
+        </div>
+        <div class="image-cover">
+          <img src="image/standarroom.jpg" alt="Standard Room" />
+        </div>
+        <div class="image-cover">
+          <img src="image/deluxeroom.jpg" alt="Deluxe Room" />
+        </div>
+        <div class="image-cover">
+          <img src="image/familyroom.jpg" alt="Family Room" />
+        </div>
+        <div class="image-cover">
+          <img src="image/kolamrenang.jpg" alt="Kolam Renang" />
+        </div>
+        <div class="image-cover">
+          <img src="image/billiard.jpg" alt="Billiard" />
+        </div>
+        <div class="image-cover"><img src="image/gym.jpg" alt="Gym" /></div>
+        <div class="image-cover"><img src="image/taman.jpg" alt="Taman" /></div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Develop by Zahra &copy; 2024</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

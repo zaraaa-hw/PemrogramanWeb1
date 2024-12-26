@@ -1,0 +1,43 @@
+.navbar {
+  background-color: #343a40;
+  padding: 10px 20px;
+}
+
+.navbar-brand,
+.nav-link {
+  color: white !important;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  color: #00c853 !important;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  background-color: #343a40;
+  border: none;
+}
+
+.dropdown-item {
+  color: white !important;
+}
+
+.dropdown-item:hover {
+  background-color: #00c853;
+  color: white !important;
+}
+
+.form-control {
+  width: 200px;
+}
+
+.btn-outline-success {
+  border-color: #198754;
+  color: #198754;
+}
+
+.btn-outline-success:hover {
+  background-color: #198754;
+  color: white;
+}
