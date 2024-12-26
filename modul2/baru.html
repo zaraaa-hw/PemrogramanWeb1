@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Mahasiswa</title>
+</head>
+<body>
+    <h1>Biodata</h1>
+    <form name="login" method="post">
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" name="nama" maxlength="30">
+        <br>
+        <br>
+        
+        <label for="prodi">Prodi</label>
+        <select name="prodi">
+            <option value="1">Teknik Informatika</option>
+            <option value="2">Sistem Informasi</option>
+            <option value="3">Desain Komunikasi Visual</option>
+            <option value="4">Manajemen Informatika</option>
+            <option value="5">Teknik Sipil</option>
+        </select>
+        <br>
+        <br>
+        
+        <label>Jenis Kelamin</label>
+        <input type="radio" id="laki" name="jenis_kelamin" value="Laki-Laki">
+        <label for="laki">Laki-Laki</label>
+        <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan">
+        <label for="perempuan">Perempuan</label>
+        <br>
+        <br>
+        
+        <label for="alamat">Alamat</label>
+        <textarea name="alamat" rows="5" cols="20"></textarea>
+        <br>
+        <br>
+        
+        <label>Hobi</label>
+        <input type="checkbox" id="baca" name="hobi" value="Membaca">
+        <label for="baca">Membaca</label>
+        <input type="checkbox" id="masak" name="hobi" value="Memasak">
+        <label for="masak">Memasak</label>
+        <input type="checkbox" id="nonton" name="hobi" value="Nonton Film">
+        <label for="nonton">Nonton Film</label>
+        <br>
+        <br>
+        
+        <input type="submit" name="tombol" value="Tambah">
+        <input type="reset" name="batal" value="Batal">
+    </form>
+</body>
+</html>
